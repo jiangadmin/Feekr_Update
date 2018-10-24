@@ -21,13 +21,10 @@ public class MyAppliaction extends Application {
 
     public static String SN = XgimiDeviceClient.getMachineId();
 
-
     @Override
     public void onCreate() {
         super.onCreate();
         context = this;
-        LogUtil.e(TAG, "准备连接AIDL");
     }
-
 
 }

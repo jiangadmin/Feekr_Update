@@ -4,9 +4,15 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Environment;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.Toast;
+
+import com.xgimi.business.api.clients.ApiProxyServiceClient;
+import com.xgimi.customservice.IXgimiApiProxyCallback;
+import com.xgimi.customservice.model.AidlCallbackBean;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -75,7 +81,7 @@ public class DownUtil {
                 public void run() {
                     try {
                         // 在子线程中下载APK文件
-                        File file = getFileFromServer(path, fileName, pd);
+                        final File file = getFileFromServer(path, fileName, pd);
                         sleep(1000);
                         // 安装APK文件
                         LogUtil.e(TAG, "文件下载完成" + fileName);
@@ -87,13 +93,25 @@ public class DownUtil {
                             }
                         }
                         //如果是安装包
-//                        if (fileName.contains(".apk"))
-//                            MyAppliaction.apiManager.set("setInstallApk", file.getPath(), null, null, null);
-                        //如果是资源文件
-//                        if (fileName.contains(".zip"))
-//                            MyAppliaction.apiManager.set("setBootStartPlayer", file.getPath(), null, null, null);
+                        if (fileName.contains(".apk")) {
+
+                            ApiProxyServiceClient.INSTANCE.binderAidlService(MyAppliaction.context, new ApiProxyServiceClient.IAidlConnectListener() {
+                                @Override
+                                public void onSuccess() {
+                                    LogUtil.e(TAG, "连接成功");
+                                    ApiProxyServiceClient.INSTANCE.silentInstallPackage(file.getPath(),null);
+                                    //释放资源
+                                    ApiProxyServiceClient.INSTANCE.release();
+                                }
+
+                                @Override
+                                public void onFailure(RemoteException e) {
+
+                                }
+                            });
+                        }
                     } catch (Exception e) {
-                        LogUtil.e(TAG, "文件下载失败了");
+                        LogUtil.e(TAG, "文件下载失败了" + e.getMessage());
                         Loading.dismiss();
                         if (showpd)
                             pd.dismiss();

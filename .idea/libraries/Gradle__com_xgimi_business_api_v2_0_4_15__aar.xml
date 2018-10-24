@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: com.xgimi.business.api_v2.0.4_15:@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/com.xgimi.business.api_v2.0.4_15.aar/cbcca8fc8c71432e271182c41a31fc2f/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/com.xgimi.business.api_v2.0.4_15.aar/446ff054b9d47007a452d85fa2e07320/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/com.xgimi.business.api_v2.0.4_15.aar/cbcca8fc8c71432e271182c41a31fc2f/jars/libs/xgimiapi-2.0.8.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/com.xgimi.business.api_v2.0.4_15.aar/cbcca8fc8c71432e271182c41a31fc2f/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/com.xgimi.business.api_v2.0.4_15.aar/cbcca8fc8c71432e271182c41a31fc2f/jars/classes.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/com.xgimi.business.api_v2.0.4_15.aar/cbcca8fc8c71432e271182c41a31fc2f/jars/libs/btlib.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/com.xgimi.business.api_v2.0.4_15.aar/446ff054b9d47007a452d85fa2e07320/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/com.xgimi.business.api_v2.0.4_15.aar/446ff054b9d47007a452d85fa2e07320/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/com.xgimi.business.api_v2.0.4_15.aar/446ff054b9d47007a452d85fa2e07320/jars/libs/xgimiapi-2.0.8.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/com.xgimi.business.api_v2.0.4_15.aar/446ff054b9d47007a452d85fa2e07320/jars/libs/btlib.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
